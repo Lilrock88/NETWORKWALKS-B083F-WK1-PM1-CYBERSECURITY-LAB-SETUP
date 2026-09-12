@@ -95,8 +95,6 @@ Inside Kali, I went to Edit Connections → Wired connection 1 → IPv4 Settings
  ## Step 6: Took a Clean Snapshot
 After everything was working, I took a VirtualBox snapshot named **"Network walks"** to preserve this clean baseline so I can restore back to it if a future exercise breaks the configuration.
 
-**Problem 3: Network disconnects again after logging out or restarting the VM**
-Even after fixing it once, logging out or restarting the VM would sometimes disconnect the network again. Re-running the same three commands brought it back each time. This seems to be a recurring quirk with this VirtualBox/Kali version combination rather than something I misconfigured.
 ## 🔎 Lab Verification
 
 | Test                        | Command                     | Result                    |
@@ -155,6 +153,7 @@ This lab is strictly for educational purposes only.
 ## 👤 Author
 
 **Arilewola Abdulrokeeb**
+
 Cybersecurity Intern — Networkwalks Academy
 🔗 [LinkedIn](https://www.linkedin.com/in/abdulrokeeb-arilewola-363bbb20a)
 ---
