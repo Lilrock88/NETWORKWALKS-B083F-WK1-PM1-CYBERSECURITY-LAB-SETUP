@@ -97,9 +97,28 @@ After everything was working, I took a VirtualBox snapshot named **"Network walk
 
 **Problem 3: Network disconnects again after logging out or restarting the VM**
 Even after fixing it once, logging out or restarting the VM would sometimes disconnect the network again. Re-running the same three commands brought it back each time. This seems to be a recurring quirk with this VirtualBox/Kali version combination rather than something I misconfigured.
+## 🔎 Lab Verification
+
+| Test                        | Command                     | Result                    |
+|-------------------------------|-------------------------------|------------------------------|
+| Check IP address              | `ip a`                        | Showed 10.0.0.2/24            |
+| Test gateway                  | `ping 10.0.0.1`               | Successful replies            |
+| Test internet connectivity    | `ping 8.8.8.8`                | Successful replies            |
 
 ---
 
+## 🐞 Problems Encountered & Solutions
+
+**Problem 1: Couldn't find the Network tool in VirtualBox's menu**
+When I went to File → Tools, the Network option wasn't showing up as expected on my version. Instead of continuing to search the GUI, I created the NAT Network directly using VBoxManage in Command Prompt, which worked right away.
+
+**Problem 2: Kali VM lost internet after setting a static IP**
+After manually configuring the static IP, my Kali VM lost internet connectivity. This is a known issue with newer Kali versions on VirtualBox 7. I fixed it by running:
+sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
+sudo nmcli connection down "Wired connection 1"
+sudo nmcli connection up "Wired connection 1"
+**Problem 3: Network disconnects again after logging out or restarting the VM**
+Even after fixing it once, logging out or restarting the VM would sometimes disconnect the network again. Re-running the same three commands brought it back each time. This seems to be a recurring quirk with this VirtualBox/Kali version combination rather than something I misconfigured.
 ## 💡 What I Learned
 
 **1. NAT vs NAT Network**
