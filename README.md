@@ -112,11 +112,14 @@ When I went to File → Tools, the Network option wasn't showing up as expected 
 
 **Problem 2: Kali VM lost internet after setting a static IP**
 After manually configuring the static IP, my Kali VM lost internet connectivity. This is a known issue with newer Kali versions on VirtualBox 7. I fixed it by running:
+
 sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
 sudo nmcli connection down "Wired connection 1"
 sudo nmcli connection up "Wired connection 1"
+
 **Problem 3: Network disconnects again after logging out or restarting the VM**
 Even after fixing it once, logging out or restarting the VM would sometimes disconnect the network again. Re-running the same three commands brought it back each time. This seems to be a recurring quirk with this VirtualBox/Kali version combination rather than something I misconfigured.
+
 ## 💡 What I Learned
 
 **1. NAT vs NAT Network**
