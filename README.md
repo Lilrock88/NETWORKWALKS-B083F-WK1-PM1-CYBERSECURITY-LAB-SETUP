@@ -94,3 +94,56 @@ Inside Kali, I went to Edit Connections → Wired connection 1 → IPv4 Settings
  <img width="1918" height="1077" alt="kali-network-configuration" src="https://github.com/user-attachments/assets/77d342f2-0e58-431f-ab87-fc850f4de275" />
  ## Step 6: Took a Clean Snapshot
 After everything was working, I took a VirtualBox snapshot named **"Network walks"** to preserve this clean baseline so I can restore back to it if a future exercise breaks the configuration.
+
+**Problem 3: Network disconnects again after logging out or restarting the VM**
+Even after fixing it once, logging out or restarting the VM would sometimes disconnect the network again. Re-running the same three commands brought it back each time. This seems to be a recurring quirk with this VirtualBox/Kali version combination rather than something I misconfigured.
+
+---
+
+## 💡 What I Learned
+
+**1. NAT vs NAT Network**
+I learned the real difference between a plain NAT setting and a NAT Network in VirtualBox. A NAT Network allows multiple VMs on the same network to communicate with each other while still reaching the internet — this matters for building a multi-machine lab later.
+
+**2. Virtual Machine Networking**
+I got a better understanding of how VirtualBox network adapters connect VMs to different types of networks, and how that setup affects connectivity.
+
+**3. Static IP Configuration**
+I learned how to manually configure and verify an IP address, subnet mask, gateway, and DNS in Kali Linux.
+
+**4. VM Snapshots**
+I learned that a snapshot is not the same as a screenshot — it's a saved state of the entire VM that I can restore to if something breaks later, and it should be taken once a setup is confirmed working.
+
+**5. Documentation**
+I learned that documenting the exact problems I ran into, not just the steps that worked, is a valuable part of building a real cybersecurity portfolio.
+
+---
+
+## 🔐 Security & Ethical Use
+
+This lab is strictly for educational purposes only. 
+
+---
+
+## 🔗 Tools & Resources
+
+- **7-Zip:** https://7-zip.org/download.html
+- **VirtualBox:** https://virtualbox.org/wiki/Downloads
+- **Kali Linux:** https://kali.org/get-kali
+
+---
+
+## 👤 Author
+
+**Arilewola Abdulrokeeb**
+Cybersecurity Intern — Networkwalks Academy
+🔗 [LinkedIn](https://www.linkedin.com/in/abdulrokeeb-arilewola-363bbb20a)
+---
+
+## 📌 Project Information
+
+**Internship:** Cybersecurity Internship
+**Week:** 01
+**Project:** Cybersecurity Lab Setup
+**Organization:** Networkwalks Academy
+**Repository:** GitHub
